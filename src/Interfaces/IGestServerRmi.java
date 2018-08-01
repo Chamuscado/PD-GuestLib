@@ -7,6 +7,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 public interface IGestServerRmi extends Remote {
+    public static final String ServiceName = "PDGuestServer";
     boolean registUser(String name, String username, String password) throws RemoteException;
 
     boolean login(String username, String password) throws RemoteException;
