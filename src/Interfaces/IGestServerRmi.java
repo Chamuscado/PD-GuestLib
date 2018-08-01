@@ -15,7 +15,7 @@ public interface IGestServerRmi extends Remote {
 
     List<User> getLoginUsers() throws RemoteException;
 
-    boolean creatPair(String user0, String user1) throws RemoteException;
+    boolean createPair(String user0, String user1) throws RemoteException;
 
 
 }
