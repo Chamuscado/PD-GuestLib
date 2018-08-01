@@ -14,4 +14,9 @@ public class User implements Serializable {
         this.username = username;
         parformado = false;
     }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + " UserName: " + username + " PassWord: " + password;
+    }
 }
