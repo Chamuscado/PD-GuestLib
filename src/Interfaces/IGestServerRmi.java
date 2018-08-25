@@ -1,6 +1,8 @@
 package Interfaces;
 
-import Elements.User;
+import Elements.*;
+import Exceptions.AccessDeniedException;
+import Exceptions.UserAlreadyLoggedException;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -11,11 +13,24 @@ public interface IGestServerRmi extends Remote {
 
     boolean registUser(String name, String username, String password) throws RemoteException;
 
-    boolean login(String username, String password) throws RemoteException;
+    boolean login(String username, String password, IClientRmi rmiInterface) throws RemoteException, UserAlreadyLoggedException;
 
-    List<User> getLoginUsers() throws RemoteException;
+    void logOut(String username, IClientRmi rmiInterface, ValidationUser validation) throws RemoteException;
 
-    boolean createPair(String user0, String user1) throws RemoteException;
+    List<User> getLoginUsers(ValidationUser validation) throws RemoteException, AccessDeniedException;
 
+    boolean sendMensage(Message message, ValidationUser validation) throws RemoteException, AccessDeniedException;
+
+    void sendPairInvite(String dest, ValidationUser validation) throws RemoteException, AccessDeniedException;
+
+    void answerPairInvite(User inviter, ValidationUser validationUser, boolean answer) throws RemoteException, AccessDeniedException;
+
+    void endPair(ValidationUser validationUser) throws RemoteException, AccessDeniedException;
+
+    Pair getMyPair(ValidationUser validationUser) throws RemoteException, AccessDeniedException;
+
+    Status getStatus(ValidationUser validationUser) throws RemoteException, AccessDeniedException;
+
+    Status getStatus(String username, ValidationUser validationUser) throws RemoteException, AccessDeniedException;
 
 }
