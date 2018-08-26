@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GestLib">
+    <output-path>$PROJECT_DIR$/Jar</output-path>
+    <root id="archive" name="GestLib.jar">
+      <element id="module-output" name="GestLib" />
+    </root>
+  </artifact>
+</component>

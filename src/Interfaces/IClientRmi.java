@@ -2,7 +2,6 @@ package Interfaces;
 
 import Elements.Message;
 import Elements.User;
-import Elements.ValidationUser;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -19,4 +18,6 @@ public interface IClientRmi extends Remote {
     void answerPairInvite(User inviter, boolean answer) throws RemoteException;
 
     void refreshStatus() throws RemoteException;
+
+    void setReadyToPlay(boolean ready) throws RemoteException;
 }
