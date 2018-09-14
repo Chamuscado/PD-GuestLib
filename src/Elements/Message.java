@@ -24,4 +24,9 @@ public class Message implements Serializable {
     public String getDest() {
         return dest;
     }
+
+    @Override
+    public String toString() {
+        return "Source: " + source + " Dest: " + dest + " msg: " + message;
+    }
 }

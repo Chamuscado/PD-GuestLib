@@ -7,7 +7,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface IClientRmi extends Remote {
-    void sendMensage(Message message) throws RemoteException;
+    String ForAll = "Geral";
 
     int getCode() throws RemoteException;
 
@@ -20,4 +20,6 @@ public interface IClientRmi extends Remote {
     void refreshStatus() throws RemoteException;
 
     void setReadyToPlay(boolean ready) throws RemoteException;
+
+    void refreshMessagesFor(String source) throws RemoteException;
 }

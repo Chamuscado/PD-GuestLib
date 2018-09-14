@@ -33,5 +33,9 @@ public interface IGestServerRmi extends Remote {
 
     Status getStatus(String username, ValidationUser validationUser) throws RemoteException, AccessDeniedException;
 
-    String getGameServerIp(ValidationUser validationUser) throws RemoteException,AccessDeniedException;
+    String getGameServerIp(ValidationUser validationUser) throws RemoteException, AccessDeniedException;
+
+    List<Message> getMessages(MessagePair pair, ValidationUser validationUser) throws RemoteException, AccessDeniedException;
+
+    List<Game> getHistGames(ValidationUser validationUser) throws RemoteException, AccessDeniedException;
 }

@@ -34,6 +34,8 @@ public class User implements Serializable {
     }
 
     public String toStringNameAndUserName() {
+        return String.format("%s (%s)", name, username);
+    }    public String toStringNameUserNameParFormado() {
         return String.format("%s (%s) %s", name, username, parFormado ? "Par Formado" : "");
     }
 }
